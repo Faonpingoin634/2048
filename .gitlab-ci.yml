@@ -1,0 +1,30 @@
+stages:
+  - build
+  - test
+  - deploy
+build_job:
+  stage: build
+  script:
+    - echo "Building the game application..."
+    - npm install # Si l'application est en Node.js
+    - echo "Build complete."
+  tags:
+    - ubuntu
+test_job:
+  stage: test
+  script:
+    - echo "Running tests..."
+    - npm test # Si l'application a des tests unitaires
+    - echo "Tests passed."
+  tags:
+    - ubuntu
+deploy_job:
+  stage: deploy
+  script:
+    - echo "Deploying the application..."
+    - # Les étapes de déploiement seront définies plus tard avec Ansible et Kube
+    - echo "Deployment initiated."
+  tags:
+    - ubuntu
+  only:
+    - main # Déclencher le déploiement uniquement sur la branche main
