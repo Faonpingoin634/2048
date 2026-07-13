@@ -2,7 +2,7 @@ import pygame
 import random
 import sys
 
-# Initialisation de Pygame
+#  Initialisation de Pygame
 pygame.init()
 
 # Paramètres de la fenêtre
@@ -148,3 +148,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+# Ajout d'une fonctionnalité de leaderboard
