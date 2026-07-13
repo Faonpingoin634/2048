@@ -2,7 +2,7 @@ import pygame
 import random
 import sys
 
-# Initialisation de Pygame
+#  Initialisation de Pygame
 pygame.init()
 
 # Paramètres de la fenêtre
