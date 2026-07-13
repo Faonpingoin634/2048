@@ -2,20 +2,23 @@ stages:
   - build
   - test
   - deploy
+
 build_job:
   stage: build
   script:
-    - echo "Building the game application..."
-    - npm install # Si l'application est en Node.js
-    - echo "Build complete."
+    - echo "Création de l'environnement virtuel..."
+    - python3 -m venv venv
+    - source venv/bin/activate
+    - echo "Installation de pygame..."
+    - pip install pygame
   tags:
     - ubuntu
+
 test_job:
   stage: test
   script:
-    - echo "Running tests..."
-    - npm test # Si l'application a des tests unitaires
-    - echo "Tests passed."
+    - echo "Vérification de la syntaxe Python..."
+    - python3 -m py_compile 2048.py
   tags:
     - ubuntu
 deploy_job:
